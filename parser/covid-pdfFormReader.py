@@ -53,12 +53,6 @@ def get_form_fields(infile):
 
 
 # %%
-import os
-cwd = os.getcwd()
-print(cwd)
-
-
-# %%
 from pprint import pprint
 
 pdf_file_name = '../test-forms/labor_2hprotokoll_ncov2019_d_draft.pdf'
