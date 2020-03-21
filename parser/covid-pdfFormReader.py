@@ -53,17 +53,21 @@ def get_form_fields(infile):
 
 
 # %%
-from pprint import pprint
-
-pdf_file_name = 'forms/labor_2hprotokoll_ncov2019_d_draft.pdf'
-
-pprint(get_form_fields(pdf_file_name))
+import os
+cwd = os.getcwd()
+print(cwd)
 
 
 # %%
 from pprint import pprint
 
-pdf_file_name = 'forms/ncov2019_d_optimized_draft.pdf'
+pdf_file_name = '../test-forms/labor_2hprotokoll_ncov2019_d_draft.pdf'
+labDict=get_form_fields(pdf_file_name)
+pprint(labDict)
 
-pprint(get_form_fields(pdf_file_name))
+
+# %%
+pdf_file_name = '../test-forms/ncov2019_d_optimized_draft.pdf'
+meldDict=get_form_fields(pdf_file_name)
+pprint(meldDict)
 
