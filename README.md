@@ -21,7 +21,7 @@ In the forms folder we provide corrected PDF Forms, which:
 * has all Hyperlinks clickable, for easy and fast access to external Resources
 
 You can find the overhauled Forms in the forms Folder.  
-Testing and Feedback is much appreciated
+Testing and Feedback is much appreciated, please feel free to create an Issues for any Problem or Change Request.
 
 ## The Parser
 
