@@ -26,7 +26,17 @@ You can find the overhauled Forms in the forms Folder.
 
 The Parser for the Forms is python based and requires the PyPDF2 Module. A requirements.txt is provided for easy installation of the necessary Python Modules.
 
-Current State is only a Proof of Concept. We are still working mainly on the Forms and Form Data Representation.
+Current State:
+
+* We are able to extract the field Values from a pdf
+* We can bulk load a set of pdf forms
+* We are able to export a csv for the forms
+
+Still this is an early stage, and there are some things pending to do:
+
+* cleanup, convert and combine Field Values
+* make a good ordering of the columns
+* be able to run it from commandline
 
 ## Participation
 
