@@ -3,7 +3,10 @@
 # %%
 from collections import OrderedDict
 from PyPDF2 import PdfFileWriter, PdfFileReader
-
+from os import listdir
+from os.path import isfile, join
+from pprint import pprint
+import pandas as pd
 
 def _getFields(obj, tree=None, retval=None, fileobj=None):
     """
@@ -53,15 +56,65 @@ def get_form_fields(infile):
 
 
 # %%
-from pprint import pprint
-
-pdf_file_name = '../test-forms/labor_2hprotokoll_ncov2019_d_draft.pdf'
-labDict=get_form_fields(pdf_file_name)
-pprint(labDict)
+def cleanAndReorderDict(oDict:OrderedDict) -> OrderedDict:
+    for key,value in oDict.items():
+        #if('/True' in value):
+        #    value=True
+        #if('/False' in value):
+        #    value=False
+        print(key,value)
 
 
 # %%
-pdf_file_name = '../test-forms/ncov2019_d_optimized_draft.pdf'
-meldDict=get_form_fields(pdf_file_name)
-pprint(meldDict)
 
+def getAllForms(mypath):
+    allForms = []
+    onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+
+    for currentFile in onlyfiles:
+        if '.pdf' in currentFile:
+            allForms.append(mypath + currentFile)
+    return allForms
+
+# %%
+def run_all():
+    labPath= '../test-forms/labor_covid19/'
+    formsLabList = getAllForms(labPath)
+    for labForm in formsLabList:
+        labDict=get_form_fields(labForm)
+
+
+    meldungPath='../test-forms/covid19/'
+    formsMeldungList = getAllForms(meldungPath)
+    meldungDictList=[]
+    for meldForm in formsMeldungList:
+        meldDict=get_form_fields(meldForm)
+        meldungDictList.append(meldDict)
+
+    cleanAndReorderDict(meldDict)
+
+    df=pd.DataFrame(meldungDictList)
+    df.head()
+
+    meldungenCsv='covid19.csv'
+    df.to_csv(meldungPath + 'csv/' + meldungenCsv,sep=';')
+
+
+# %%
+import argparse
+
+if __name__ == "__main__":
+    parser=argparse.ArgumentParser(
+        description='''This Script reads a given set of PDF Forms for COVID19 Reporting from a folder and reads all Form Data and writes it to a csv file. ''',
+        epilog='''Please report problems and enhancements at https://github.com/lakay/COVID-19_PDF-Reporting. '''
+    )
+    parser.add_argument('-type','-ft','--ft', type=str, metavar='form type',default='am', help='am for Arzt Meldung, lm for Labor Meldung, tm for Todes Meldung')
+    parser.add_argument('-o','--o','-out', type=str,metavar='Output',default='../test-forms/covid19/csv/covid19.csv', help='Path and Filename for the output csv')
+    parser.add_argument('path', nargs=1, type=str, metavar='path', default='../test-forms/covid19/', help='pfad zu den PDF Formularen')
+    args=parser.parse_args()
+    
+    run_all()
+
+
+
+# %%
