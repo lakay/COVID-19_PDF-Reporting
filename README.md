@@ -32,7 +32,11 @@ Current State:
 * We can bulk load a set of pdf forms
 * We are able to export a csv for the forms
 
-Still this is an early stage, and there are some things pending to do:
+This is an early stage, you can find the first example result under <test-forms/covid19/csv>.  
+We will stick to this pattern for the next tests for the other forms (test-forms/.../csv).
+
+
+There are still things pending to do:
 
 * cleanup, convert and combine Field Values
 * make a good ordering of the columns
