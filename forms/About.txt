@@ -1,0 +1,9 @@
+French and Italian versions will follow
+
+Versions
+The version-number in the file Name (V1, V5 etc.) indicates the version of the original BAG-form this form is based on.
+
+Content
+Meldungsformular: covid19
+Formular Todesfall: covid19_EM
+Formular Laborbestätigung: labor_covid19

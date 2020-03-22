@@ -1,1 +1,0 @@
-The Version in the file Name (V1, V5 etc.) Indicate the Version from the Original BAG-form this form is based on.
