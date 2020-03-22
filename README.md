@@ -32,7 +32,7 @@ Current State:
 * We can bulk load a set of pdf forms
 * We are able to export a csv for the forms
 
-This is an early stage, you can find the first example result under <test-forms/covid19/csv>.  
+This is an early stage, her is our [first example result](test-forms/covid19/csv).  
 We will stick to this pattern for the next tests for the other forms (test-forms/.../csv).
 
 
