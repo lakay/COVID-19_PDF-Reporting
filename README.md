@@ -21,10 +21,25 @@ In the forms folder we provide corrected PDF Forms, which:
 * has all Hyperlinks clickable, for easy and fast access to external Resources
 
 You can find the overhauled Forms in the forms Folder.  
-Testing and Feedback is much appreciated, please feel free to create an Issues for any Problem or Change Request.
 
 ## The Parser
 
 The Parser for the Forms is python based and requires the PyPDF2 Module. A requirements.txt is provided for easy installation of the necessary Python Modules.
 
 Current State is only a Proof of Concept. We are still working mainly on the Forms and Form Data Representation.
+
+## Participation
+
+If you have free time and want to help, we have need for Testing and Feedback on the functionality of the PDF Forms.
+What you can Test:
+
+* is the Navigation via tabs in the right order
+* is the Text Formatting of the fields okay, and do these work if they would be printed out
+  * does the Field Content behave correctly if more Data is typed in  
+* currently all Forms are optimized to be used with Acrobat Reader, we are interested in Issues with other readers
+
+Your help is much appreciated, please feel free to create Issues for any Problem or Change Request for improvements.
+
+To test our Code we are in dire need of a bulk of filled forms, so if you Test the inputs, please save them and send them to us:
+
+* <covid19_forms@wellenleiter.com>
